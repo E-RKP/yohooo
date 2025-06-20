@@ -1,3 +1,5 @@
+
+
 const numerino = document.getElementById('numerino')
 const numerone = document.getElementById('numerone')
 const buttonaumenta = document.getElementById('dx')
@@ -59,5 +61,18 @@ fetch ("https://jsonplaceholder.typicode.com/users").then(function(placeholder){
     lista.appendChild(li)
   }
 
+  document.body.appendChild(lista)
+})
+
+fetch("https://jsonplaceholder.typicode.com/posts").then(function(a){
+  return a.json();
+}).then(function(a){
+
+  let lista = document.createElement('ul')
+  for(i=0; i<5;i++){
+    let li = document.createElement('li')
+    li.textContent = a[i].title
+    lista.appendChild(li)
+  }
   document.body.appendChild(lista)
 })
