@@ -100,3 +100,17 @@ fetch("https://jsonplaceholder.typicode.com/users/3").then(function(a){
 
   return foglie;
 })
+
+fetch("https://jsonplaceholder.typicode.com/users").then(function(a){
+return a.json();
+}).then(function(ab){
+  let lista = document.createElement('ul')
+  for(i=0; i<ab.length;i++){
+    if (ab[i].name.includes('C')){
+      let li = document.createElement('li')
+      li.textContent = ab[i].name
+      lista.appendChild(li)
+    }
+  }
+  document.body.appendChild(lista)
+})
