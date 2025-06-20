@@ -22,7 +22,7 @@ body{
   gap: 2rem;
 }
 
-#sx,#dx{
+#sx,#dx, #reset{
   padding: 0.65rem 2rem;
   background-color: black;
   color: white;
