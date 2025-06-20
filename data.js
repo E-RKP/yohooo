@@ -76,3 +76,27 @@ fetch("https://jsonplaceholder.typicode.com/posts").then(function(a){
   }
   document.body.appendChild(lista)
 })
+
+fetch("https://jsonplaceholder.typicode.com/users/3").then(function(a){
+  return a.json();
+}).then(function(foglie){
+
+  let box = document.createElement('div')
+  let p = document.createElement('p')
+  let p2 = document.createElement('p')
+  let p3 = document.createElement('p')
+  let p4 = document.createElement('p')
+
+  p.textContent = foglie.name,
+  box.appendChild(p)
+  p2.textContent = foglie.username
+  box.appendChild(p2)
+  p3.textContent = foglie.email
+  box.appendChild(p3)
+  p4.textContent = foglie.address.street
+  box.appendChild(p4)
+
+  document.body.appendChild(box)
+
+  return foglie;
+})
