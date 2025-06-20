@@ -113,4 +113,10 @@ return a.json();
     }
   }
   document.body.appendChild(lista)
+  return ab;
+}).then(function(ok){
+  for (i=0; i<ok.length;i++){
+    console.log(`${ok[i].name} vive a ${ok[i].address.city}`)
+  }
+  return ok;
 })
