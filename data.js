@@ -119,4 +119,31 @@ return a.json();
     console.log(`${ok[i].name} vive a ${ok[i].address.city}`)
   }
   return ok;
+}).then(function(utenti){
+  let button = document.getElementById('uss')
+  function mostrautenti(){
+    let lista = document.createElement('ul')
+    for (i=0; i<utenti.length;i++){
+      let li = document.createElement('li')
+      li.textContent = utenti[i].name
+      lista.appendChild(li)
+    }
+    document.body.appendChild(lista)
+  }
+
+  button.addEventListener('click',()=>{
+    mostrautenti();
+  })
+})
+
+fetch("https://jsonplaceholder.typicode.com/posts?userId=2").then(function(a){
+  return a.json();
+}).then(function(utente){
+  let ul = document.createElement('ul')
+  for (i=0; i<utente.length;i++){
+    let li = document.createElement('li')
+    li.textContent = utente[i].title
+    ul.appendChild(li)
+  }
+  document.body.appendChild(ul)
 })
