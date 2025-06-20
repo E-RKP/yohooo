@@ -48,3 +48,16 @@ reset.onclick = function(){
   numerino.textContent = valorepic
   numerone.textContent = valoregrand
 }
+
+fetch ("https://jsonplaceholder.typicode.com/users").then(function(placeholder){
+  return placeholder.json();
+}).then(function(placeholder){
+  let lista = document.createElement('ul')
+  for (i=0; i<placeholder.length;i++){
+    let li = document.createElement('li')
+    li.textContent = `${placeholder[i].name} - ${placeholder[i].email}`
+    lista.appendChild(li)
+  }
+
+  document.body.appendChild(lista)
+})
